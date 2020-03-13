@@ -6,7 +6,7 @@ class SkillButton extends React.Component {
   render() {
     return (
       <button className='skill-button'>
-        <JsIcon bookfill="orange" bookside="#39B39B" bookfront="#76CEBD"/>
+        <JsIcon />
         Skill Button
       </button>
     )
