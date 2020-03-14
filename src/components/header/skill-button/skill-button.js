@@ -1,12 +1,12 @@
 import React from 'react';
 import './skill-button.scss';
-import JsIcon from '../../icons/js-icon';
+import SkillIcon from '../../icons/skill-icon';
 
 class SkillButton extends React.Component {
   render() {
     return (
       <button className='skill-button'>
-        <JsIcon />
+        <SkillIcon />
         Skill Button
       </button>
     )
@@ -15,5 +15,7 @@ class SkillButton extends React.Component {
 
 export default SkillButton;
 
-
+SkillButton.propTypes = {
+  
+}
 

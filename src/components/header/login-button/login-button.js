@@ -12,3 +12,7 @@ class LoginButton extends React.Component {
 }
 
 export default LoginButton;
+
+LoginButton.propTypes = {
+  
+}

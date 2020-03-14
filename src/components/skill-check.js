@@ -1,6 +1,6 @@
 import React from 'react';
 import './skill-check.scss';
-import HeaderBox from './header/header-box'
+import HeaderBox from './header/header-box/header-box'
 
 class SkillCheck extends React.Component {
   render() {

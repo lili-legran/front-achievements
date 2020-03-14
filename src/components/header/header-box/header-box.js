@@ -1,7 +1,7 @@
 import React from 'react';
 import './header-box.scss';
-import SkillButton from './skill-button';
-import LoginButton from './login-button';
+import SkillButton from '../skill-button/skill-button';
+import LoginButton from '../login-button/login-button';
 
 class HeaderBox extends React.Component {
   render() {
@@ -15,3 +15,7 @@ class HeaderBox extends React.Component {
 }
 
 export default HeaderBox;
+
+HeaderBox.propTypes = {
+  
+}
