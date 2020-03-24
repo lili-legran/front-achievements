@@ -30,7 +30,6 @@ class HeaderBox extends React.Component {
           { skillButtonParams.map(el => <SkillButton 
               text={ el.text }
               icon={ el.icon }
-              link={ el}
               selectLanguage={ selectLanguage } 
               activeLanguage={ activeLanguage }/>
           ) }

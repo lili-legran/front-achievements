@@ -7,8 +7,9 @@ class AchievementsBox extends React.Component {
   state = {
     achievements: []
   }
-  componentDidMount() {
-    axios.get('https://languages-api.glitch.me/javascript')
+
+  getAchievements = language => {
+    axios.get(`https://languages-api.glitch.me/${language}`)
       .then(response => this.setState({
         achievements: response.data
       }))
@@ -16,6 +17,20 @@ class AchievementsBox extends React.Component {
         console.log('Error!', err);
       });
   }
+
+  componentDidMount() {
+    const { activeLanguage } = this.props;
+    this.getAchievements(activeLanguage);
+  }
+
+  componentDidUpdate(prevProps) {
+    const { activeLanguage } = this.props;
+    
+    if (prevProps.activeLanguage !== activeLanguage) {
+      this.getAchievements(activeLanguage);
+    }
+  }
+
   render() {
     const { achievements } = this.state;  
     return (

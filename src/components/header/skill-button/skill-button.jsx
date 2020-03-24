@@ -1,21 +1,28 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import './skill-button.scss';
 
 
 class SkillButton extends React.Component {
+  onClickHandler = () => {
+    const { selectLanguage, text } = this.props;
+    selectLanguage(text.toLowerCase());
+  }
+
   render() {
-    // const Icon = this.props.icon;
-    const { selectLanguage, icon: Icon, text, activeLanguage, link} = this.props;
+    const { icon: Icon, text, activeLanguage } = this.props;
     const isActive = text === activeLanguage;
     return (
-      <button
-        className={`skill-button ${isActive ? 'skill-button__active' : ''}`}
-        NavLink={ link }
-        onClick={ () => { selectLanguage(text) }}
-      >
-        { Icon && <Icon /> }
-        <span className='skill-button__title'> {text} </span> 
-      </button>
+      <NavLink to={ `/${ text.toLowerCase() }`}>
+        <button
+          className={`skill-button ${isActive ? 'skill-button__active' : ''}`}
+          onClick={ this.onClickHandler }
+        >
+          { Icon && <Icon /> }
+          <span className='skill-button__title'> {text} </span> 
+        </button>
+      </NavLink>
+      
     )
   }
 }
