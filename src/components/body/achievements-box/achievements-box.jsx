@@ -19,20 +19,26 @@ class AchievementsBox extends React.Component {
   }
 
   componentDidMount() {
-    const { activeLanguage } = this.props;
-    this.getAchievements(activeLanguage);
+    const { location } = this.props;
+
+    const currentLocation = location.pathname.split('/')[1];
+
+    this.getAchievements(currentLocation);
   }
 
   componentDidUpdate(prevProps) {
-    const { activeLanguage } = this.props;
+    const { location } = this.props;
+    const prevLocation = prevProps.location.pathname.split('/')[1];
+    const currentLocation = location.pathname.split('/')[1];
     
-    if (prevProps.activeLanguage !== activeLanguage) {
-      this.getAchievements(activeLanguage);
+    if (prevLocation !== currentLocation) {
+      this.getAchievements(currentLocation);
     }
   }
 
   render() {
-    const { achievements } = this.state;  
+    const { achievements } = this.state;
+
     return (
       <div className="achievement-box">
         { achievements.map(item => (

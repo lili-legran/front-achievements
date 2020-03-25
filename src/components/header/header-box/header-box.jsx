@@ -1,7 +1,8 @@
 import React from 'react';
 import './header-box.scss';
 import SkillButton from '../skill-button/skill-button';
-import LoginButton from '../login-button/login-button';
+import SignIn from '../sign-in/sign-in';
+import SignUp from '../sign-up/sign-up';
 import JSIcon from '../../icons/js-icon';
 import HtmlIcon from '../../icons/html-icon';
 import CssIcon from '../../icons/css-icon';
@@ -23,18 +24,24 @@ const skillButtonParams = [
 
 class HeaderBox extends React.Component {
   render() {
-    const {selectLanguage, activeLanguage} = this.props;
+    const { location } = this.props;
+    const currentLocation = location.pathname.split('/')[1];
+
+    const isLanguagePage = currentLocation === 'css' || currentLocation === 'html' || currentLocation === 'javascript';
     return (
       <div className="header-box">
         <div className="header-box__skills">
-          { skillButtonParams.map(el => <SkillButton 
+          { isLanguagePage && skillButtonParams.map(el => <SkillButton 
               text={ el.text }
               icon={ el.icon }
-              selectLanguage={ selectLanguage } 
-              activeLanguage={ activeLanguage }/>
-          ) }
+              currentLocation={ currentLocation }
+              />
+          )}
         </div>
-        <LoginButton />
+        <div className=' '>
+          <SignIn />
+          <SignUp />
+        </div>
       </div>
     )
   }
