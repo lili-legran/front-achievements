@@ -1,0 +1,10 @@
+{
+  "extends": ["airbnb", "airbnb/hooks"],
+  "parser": "babel-eslint",
+  "rules": {
+    "comma-dangle": "off",
+    "jsx-quotes": ["error", "prefer-single"],
+    "react/prop-types": "off",
+    "react/state-in-constructor": "off"
+  }
+}

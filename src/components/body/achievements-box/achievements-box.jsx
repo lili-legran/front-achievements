@@ -8,16 +8,6 @@ class AchievementsBox extends React.Component {
     achievements: []
   }
 
-  getAchievements = language => {
-    axios.get(`https://languages-api.glitch.me/${language}`)
-      .then(response => this.setState({
-        achievements: response.data
-      }))
-      .catch(err => {
-        console.log('Error!', err);
-      });
-  }
-
   componentDidMount() {
     const { location } = this.props;
 
@@ -30,25 +20,37 @@ class AchievementsBox extends React.Component {
     const { location } = this.props;
     const prevLocation = prevProps.location.pathname.split('/')[1];
     const currentLocation = location.pathname.split('/')[1];
-    
+
     if (prevLocation !== currentLocation) {
       this.getAchievements(currentLocation);
     }
+  }
+
+  getAchievements = (language) => {
+    axios.get(`https://languages-api.glitch.me/${language}`)
+      .then((response) => this.setState({
+        achievements: response.data
+      }))
+      .catch((err) => {
+        // eslint-disable-next-line no-console
+        console.log('Error!', err);
+      });
   }
 
   render() {
     const { achievements } = this.state;
 
     return (
-      <div className="achievement-box">
-        { achievements.map(item => (
-          <Achievement 
-            title={ item.title }
-            description={ item.description }
-            mark={ item.mark }/>
-        ) )}
-      </div> 
-    )
+      <div className='achievement-box'>
+        { achievements.map((item) => (
+          <Achievement
+            title={item.title}
+            description={item.description}
+            mark={item.mark}
+          />
+        ))}
+      </div>
+    );
   }
 }
 

@@ -15,40 +15,40 @@ const skillButtonParams = [
   {
     text: 'HTML',
     icon: HtmlIcon
-  }, 
+  },
   {
     text: 'CSS',
     icon: CssIcon
   }
-]
+];
 
-class HeaderBox extends React.Component {
-  render() {
-    const { location } = this.props;
-    const currentLocation = location.pathname.split('/')[1];
+const HeaderBox = (props) => {
+  const { location } = props;
+  const currentLocation = location.pathname.split('/')[1];
 
-    const isLanguagePage = currentLocation === 'css' || currentLocation === 'html' || currentLocation === 'javascript';
-    return (
-      <div className="header-box">
-        <div className="header-box__skills">
-          { isLanguagePage && skillButtonParams.map(el => <SkillButton 
-              text={ el.text }
-              icon={ el.icon }
-              currentLocation={ currentLocation }
-              />
-          )}
-        </div>
-        <div className=' '>
-          <SignIn />
-          <SignUp />
-        </div>
+  const isLanguagePage = currentLocation === 'css' || currentLocation === 'html' || currentLocation === 'javascript';
+  return (
+    <div className='header-box'>
+      <div className='header-box__skills'>
+        { isLanguagePage && skillButtonParams.map((el) => (
+          <SkillButton
+            text={el.text}
+            icon={el.icon}
+            currentLocation={currentLocation}
+          />
+        ))}
       </div>
-    )
-  }
-}
+      <div className=' '>
+        <SignIn />
+        <SignUp />
+      </div>
+    </div>
+  );
+};
+
 
 export default HeaderBox;
 
 HeaderBox.propTypes = {
-  
-}
+
+};
