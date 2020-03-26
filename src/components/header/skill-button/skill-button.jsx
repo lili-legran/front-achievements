@@ -8,13 +8,13 @@ const SkillButton = (props) => {
 
   const isActive = text.toLowerCase() === currentLocation;
   return (
-    <NavLink to={`/${text.toLowerCase()}`}>
+    <NavLink to={`/${text.toLowerCase()}`} className='skill'>
       <button
         type='button'
-        className={`skill-button ${isActive ? 'skill-button__active' : ''}`}
+        className={`skill__button ${isActive ? 'skill__button-active' : ''}`}
       >
         { Icon && <Icon /> }
-        <span className='skill-button__title'>
+        <span className='skill__button_title'>
           {' '}
           {text}
           {' '}

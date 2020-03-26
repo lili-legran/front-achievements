@@ -1,8 +1,8 @@
 import React from 'react';
 import './header-box.scss';
 import SkillButton from '../skill-button/skill-button';
-import SignIn from '../sign-in/sign-in';
-import SignUp from '../sign-up/sign-up';
+import SignInButton from '../sign-in-button/sign-in-button';
+import SignUpButton from '../sign-up-button/sign-up-button';
 import JSIcon from '../../icons/js-icon';
 import HtmlIcon from '../../icons/html-icon';
 import CssIcon from '../../icons/css-icon';
@@ -24,7 +24,7 @@ const skillButtonParams = [
 
 const HeaderBox = (props) => {
   const { location } = props;
-  const currentLocation = location.pathname.split('/')[1];
+  const currentLocation = location.pathname.split('/')[1].toLowerCase();
 
   const isLanguagePage = currentLocation === 'css' || currentLocation === 'html' || currentLocation === 'javascript';
   return (
@@ -38,9 +38,9 @@ const HeaderBox = (props) => {
           />
         ))}
       </div>
-      <div className=' '>
-        <SignIn />
-        <SignUp />
+      <div className='header-box__sign'>
+        <SignInButton />
+        <SignUpButton />
       </div>
     </div>
   );

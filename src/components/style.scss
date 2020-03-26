@@ -1,10 +1,14 @@
-@mixin header-button {
-  appearance: none;
-  border: 0;
-  border-radius: 0;
-  background: #dadada;
-  outline: none;
-  cursor: pointer;
-  padding: 0 15px;
-  min-width: 130px;
+// @mixin header-button {
+//   appearance: none;
+//   border: 0;
+//   border-radius: 0;
+//   background: #dadada;
+//   outline: none;
+//   cursor: pointer;
+//   padding: 0 15px;
+//   min-width: 130px;
+// }
+
+a {
+  text-decoration: none;
 }

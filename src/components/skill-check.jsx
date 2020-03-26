@@ -10,7 +10,8 @@ import ErrorPage from './body/error-page/error-page';
 import './skill-check.scss';
 import HeaderBox from './header/header-box/header-box';
 import AchievementsBox from './body/achievements-box/achievements-box';
-import SignUp from './header/sign-up/sign-up';
+import SignUpForm from './body/sign-up-form/sign-up-form';
+import SignInForm from './body/sign-in-form/sign-in-form';
 
 const SkillCheck = () => (
   <BrowserRouter>
@@ -24,7 +25,8 @@ const SkillCheck = () => (
           path={['/html', '/css', '/javascript']}
           render={(props) => <AchievementsBox {...props} />}
         />
-        <Route path='/signup' component={SignUp} />
+        <Route path='/signup' component={SignUpForm} />
+        <Route path='/signin' component={SignInForm} />
         <Route component={ErrorPage} />
       </Switch>
     </div>
