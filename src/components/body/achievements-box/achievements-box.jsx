@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 import './achievements-box.scss';
 import Achievement from '../achievement/achievement';
 
@@ -44,6 +45,7 @@ class AchievementsBox extends React.Component {
       <div className='achievement-box'>
         { achievements.map((item) => (
           <Achievement
+            key={item.title}
             title={item.title}
             description={item.description}
             mark={item.mark}
@@ -53,5 +55,11 @@ class AchievementsBox extends React.Component {
     );
   }
 }
+
+AchievementsBox.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string
+  }).isRequired
+};
 
 export default AchievementsBox;

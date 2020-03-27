@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './achievement.scss';
 
 const Achievement = (props) => {
@@ -18,6 +19,12 @@ const Achievement = (props) => {
       </div>
     </div>
   );
+};
+
+Achievement.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  mark: PropTypes.number.isRequired
 };
 
 export default Achievement;

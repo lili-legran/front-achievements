@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import './skill-button.scss';
 
 
@@ -24,8 +25,10 @@ const SkillButton = (props) => {
   );
 };
 
-export default SkillButton;
-
 SkillButton.propTypes = {
-
+  icon: PropTypes.elementType.isRequired,
+  text: PropTypes.string.isRequired,
+  currentLocation: PropTypes.string.isRequired
 };
+
+export default SkillButton;

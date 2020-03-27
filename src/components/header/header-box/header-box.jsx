@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './header-box.scss';
 import SkillButton from '../skill-button/skill-button';
 import SignInButton from '../sign-in-button/sign-in-button';
@@ -32,6 +33,7 @@ const HeaderBox = (props) => {
       <div className='header-box__skills'>
         { isLanguagePage && skillButtonParams.map((el) => (
           <SkillButton
+            key={el.text}
             text={el.text}
             icon={el.icon}
             currentLocation={currentLocation}
@@ -46,9 +48,10 @@ const HeaderBox = (props) => {
   );
 };
 
+HeaderBox.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string
+  }).isRequired
+};
 
 export default HeaderBox;
-
-HeaderBox.propTypes = {
-
-};
