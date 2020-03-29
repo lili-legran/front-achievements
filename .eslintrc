@@ -4,6 +4,8 @@
   "rules": {
     "comma-dangle": "off",
     "jsx-quotes": ["error", "prefer-single"],
-    "react/state-in-constructor": "off"
+    "react/state-in-constructor": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off"
   }
 }

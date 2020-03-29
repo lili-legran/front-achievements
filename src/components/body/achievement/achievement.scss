@@ -6,6 +6,9 @@
   align-items: center;
   box-sizing: border-box;
   width: 100%;
+  &__active {
+    border: 1px solid red;
+  }
   &__designation {
     max-width: 80%;
   }
