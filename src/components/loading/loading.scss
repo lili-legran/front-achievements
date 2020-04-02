@@ -1,4 +1,9 @@
 .loading {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #000;
+  opacity: 0.1;
   &__img {
     max-width: 70px;
     animation: loadingWheel 2s infinite linear;
