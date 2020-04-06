@@ -11,7 +11,7 @@ import HeaderBox from './header/header-box/header-box';
 import AchievementsBox from './body/achievements-box/achievements-box';
 import SignUpForm from './body/sign-up-form/sign-up-form';
 import SignInForm from './body/sign-in-form/sign-in-form';
-import Loading from './loading/loading';
+// import Loading from './loading/loading';
 import './skill-check.scss';
 
 const SkillCheck = () => (
