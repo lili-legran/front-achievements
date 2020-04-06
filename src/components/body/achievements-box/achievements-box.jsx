@@ -11,9 +11,7 @@ class AchievementsBox extends React.Component {
 
   componentDidMount() {
     const { location } = this.props;
-
     const currentLocation = location.pathname.split('/')[1];
-
     this.getAchievements(currentLocation);
   }
 

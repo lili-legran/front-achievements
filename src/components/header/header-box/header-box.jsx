@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import './header-box.scss';
 import SkillButton from '../skill-button/skill-button';
 import SignInButton from '../sign-in-button/sign-in-button';
@@ -24,7 +25,7 @@ const skillButtonParams = [
 ];
 
 const HeaderBox = (props) => {
-  const { location } = props;
+  const { location, isAuthorized } = props;
   const currentLocation = location.pathname.split('/')[1].toLowerCase();
 
   const isLanguagePage = currentLocation === 'css' || currentLocation === 'html' || currentLocation === 'javascript';
@@ -40,10 +41,16 @@ const HeaderBox = (props) => {
           />
         ))}
       </div>
-      <div className='header-box__sign'>
-        <SignInButton />
-        <SignUpButton />
-      </div>
+      {
+        isAuthorized
+          ? 'Nickname'
+          : (
+            <div className='header-box__sign'>
+              <SignInButton />
+              <SignUpButton />
+            </div>
+          )
+      }
     </div>
   );
 };
@@ -51,7 +58,12 @@ const HeaderBox = (props) => {
 HeaderBox.propTypes = {
   location: PropTypes.shape({
     pathname: PropTypes.string
-  }).isRequired
+  }).isRequired,
+  isAuthorized: PropTypes.bool.isRequired
 };
 
-export default HeaderBox;
+export default connect(
+  (state) => ({
+    isAuthorized: state.isAuthorized
+  })
+)(HeaderBox);
