@@ -1,23 +1,23 @@
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-// import './index.css';
-// import App from './App';
-// import * as serviceWorker from './serviceWorker';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
 
-// ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
 
-// serviceWorker.unregister();
+serviceWorker.unregister();
 
-import { createStore } from 'redux';
+// import { createStore } from 'redux';
 
-function achievement(state = []) {
-  return state;
-}
+// function achievement(state = []) {
+//   return state;
+// }
 
-const store = createStore(achievement);
+// const store = createStore(achievement);
 
-store.subscribe(() => {
-  console.log('subscribe', store.getState());
-});
+// store.subscribe(() => {
+//   console.log('subscribe', store.getState());
+// });
 
-store.dispatch({ type: 'ADD_ACHIEVEMENT', language: 'JavaScript' })
+// store.dispatch({ type: 'ADD_ACHIEVEMENT', language: 'JavaScript' });

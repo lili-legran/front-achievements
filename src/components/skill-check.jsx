@@ -31,7 +31,7 @@ const SkillCheck = () => (
         <Route component={ErrorPage} />
       </Switch>
     </div>
-    <Loading />
+    {/* <Loading /> */}
   </BrowserRouter>
 );
 
