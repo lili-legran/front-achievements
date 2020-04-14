@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'axios';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import './achievements-box.scss';
 import Achievement from '../achievement/achievement';
@@ -16,24 +16,21 @@ class AchievementsBox extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    const { location } = this.props;
+    const { location, achievements } = this.props;
+    const prevAchievements = prevProps.achievements;
     const prevLocation = prevProps.location.pathname.split('/')[1];
     const currentLocation = location.pathname.split('/')[1];
 
-    if (prevLocation !== currentLocation) {
+    if (prevLocation !== currentLocation || prevAchievements !== achievements) {
       this.getAchievements(currentLocation);
     }
   }
 
   getAchievements = (language) => {
-    axios.get(`https://languages-api.glitch.me/${language}`)
-      .then((response) => this.setState({
-        achievements: response.data
-      }))
-      .catch((err) => {
-        // eslint-disable-next-line no-console
-        console.log('Error!', err);
-      });
+    const { achievements } = this.props;
+    this.setState({
+      achievements: achievements[language] || []
+    });
   }
 
   render() {
@@ -57,7 +54,16 @@ class AchievementsBox extends React.Component {
 AchievementsBox.propTypes = {
   location: PropTypes.shape({
     pathname: PropTypes.string
+  }).isRequired,
+  achievements: PropTypes.shape({
+    html: PropTypes.array,
+    css: PropTypes.array,
+    javascript: PropTypes.array
   }).isRequired
 };
 
-export default AchievementsBox;
+export default connect(
+  (state) => ({
+    achievements: state.achievements
+  })
+)(AchievementsBox);

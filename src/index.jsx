@@ -8,7 +8,8 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 const initialState = {
-  isAuthorized: false
+  isAuthorized: false,
+  achievements: {}
 };
 
 function reducer(state = initialState, action) {
@@ -16,6 +17,12 @@ function reducer(state = initialState, action) {
     return {
       ...state,
       isAuthorized: action.payload
+    };
+  }
+  if (action.type === 'SET_ACHIEVEMENTS') {
+    return {
+      ...state,
+      achievements: action.payload
     };
   }
   return state;
