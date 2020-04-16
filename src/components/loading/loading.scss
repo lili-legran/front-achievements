@@ -1,12 +1,21 @@
 .loading {
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: center;
-  background-color: #000;
-  opacity: 0.1;
+  background-color: rgba(0, 0, 0, 0.309);
+  opacity: 0.5;
+  z-index: 5;
   &__img {
-    max-width: 70px;
-    animation: loadingWheel 2s infinite linear;
+    position: absolute;
+    top: calc(50% - 50px);
+    max-width: 50px;
+    max-height: 50px;
+    z-index: 10;
+    animation: loadingWheel 1.5s infinite linear;
   }
 }
 

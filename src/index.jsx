@@ -3,13 +3,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import './index.css';
+// import Loading from './components/loading/loading';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import './index.css';
+// import loadingImg from './assets/download.png';
 
 const initialState = {
   isAuthorized: false,
-  achievements: {}
+  achievements: {},
+  isLoading: false
 };
 
 function reducer(state = initialState, action) {
@@ -23,6 +26,12 @@ function reducer(state = initialState, action) {
     return {
       ...state,
       achievements: action.payload
+    };
+  }
+  if (action.type === 'SET_LOADING') {
+    return {
+      ...state,
+      isLoading: action.payload
     };
   }
   return state;

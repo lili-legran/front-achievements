@@ -6,26 +6,25 @@ import {
   Redirect,
   Switch
 } from 'react-router-dom';
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import axios from 'axios';
+import { connect } from 'react-redux';
 import ErrorPage from './body/error-page/error-page';
 import HeaderBox from './header/header-box/header-box';
 import AchievementsBox from './body/achievements-box/achievements-box';
 import SignUpForm from './body/sign-up-form/sign-up-form';
 import SignInForm from './body/sign-in-form/sign-in-form';
-// import Loading from './loading/loading';
 import './skill-check.scss';
 
 class SkillCheck extends React.Component {
-  // getData = () => {
-  //   return response.data;
-  // }
-
   componentDidMount() {
-    const { setAchievements } = this.props;
+    const { setAchievements, setLoading } = this.props;
+    setLoading(true);
     axios.get('https://languages-api.glitch.me/achievements')
-      .then((response) => setAchievements(response.data))
+      .then((response) => {
+        setAchievements(response.data);
+        setLoading(false);
+      })
       .catch((err) => {
         // eslint-disable-next-line no-console
         console.log('Error!', err);
@@ -50,20 +49,21 @@ class SkillCheck extends React.Component {
             <Route component={ErrorPage} />
           </Switch>
         </div>
-        {/* <Loading /> */}
       </BrowserRouter>
     );
   }
 }
 
 SkillCheck.propTypes = {
-  setAchievements: PropTypes.func.isRequired
+  setAchievements: PropTypes.func.isRequired,
+  setLoading: PropTypes.func.isRequired
 };
 
 
 export default connect(
   null,
   (dispatch) => ({
-    setAchievements: (param) => dispatch({ type: 'SET_ACHIEVEMENTS', payload: param })
+    setAchievements: (param) => dispatch({ type: 'SET_ACHIEVEMENTS', payload: param }),
+    setLoading: (param) => dispatch({ type: 'SET_LOADING', payload: param })
   })
 )(SkillCheck);
