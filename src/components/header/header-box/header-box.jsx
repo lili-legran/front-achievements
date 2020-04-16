@@ -8,6 +8,7 @@ import SignUpButton from '../sign-up-button/sign-up-button';
 import JSIcon from '../../icons/js-icon';
 import HtmlIcon from '../../icons/html-icon';
 import CssIcon from '../../icons/css-icon';
+import LogOutButton from '../../body/log-out-button/log-out-button';
 
 const skillButtonParams = [
   {
@@ -43,14 +44,19 @@ const HeaderBox = (props) => {
       </div>
       {
         isAuthorized
-          ? 'Nickname'
+          ? (
+            <div className='header-box__sign'>
+              <span>Nickname</span>
+              <LogOutButton />
+            </div>
+          )
           : (
             <div className='header-box__sign'>
               <SignInButton />
               <SignUpButton />
             </div>
           )
-      }
+        }
     </div>
   );
 };

@@ -1,0 +1,15 @@
+.log-out-header {
+  margin-left: 15px;
+  text-decoration: none;
+  &__button {
+    border: 0;
+    border-radius: 0;
+    background: #dadada;
+    padding: 5px;
+    min-width: 130px;
+    height: 44px;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 0 5px 3px #b5b5b5;
+  }
+}
