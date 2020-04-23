@@ -1,6 +1,7 @@
 .achievement {
   padding: 15px;
-  border-bottom: 1px solid #cecece;
+  border: 1px solid #cecece;
+  margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,7 +20,16 @@
   &__description {
 
   }
-  &__mark {
+  &__option {
     max-width: 20%;
+    display: flex;
+    align-items: center;
+    &_check {
+      margin-left: 20px;
+      cursor: pointer;
+    }
+    &_check-img {
+      max-width: 40px;
+    }
   }
 }

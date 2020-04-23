@@ -12,7 +12,8 @@ import './index.css';
 const initialState = {
   isAuthorized: false,
   achievements: {},
-  isLoading: false
+  isLoading: false,
+  isActiveAchievement: false
 };
 
 function reducer(state = initialState, action) {
@@ -32,6 +33,12 @@ function reducer(state = initialState, action) {
     return {
       ...state,
       isLoading: action.payload
+    };
+  }
+  if (action.type === 'SET_ACTIVE_ACHIEVEMENTS') {
+    return {
+      ...state,
+      isActiveAchievement: action.payload
     };
   }
   return state;

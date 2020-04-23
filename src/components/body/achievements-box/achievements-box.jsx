@@ -2,11 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import './achievements-box.scss';
-import Achievement from '../achievement/achievement';
+import AchievementType from '../achievement-type/achievement-type';
 
 class AchievementsBox extends React.Component {
   state = {
-    achievements: []
+    currentLanguageAchievements: {}
   }
 
   componentDidMount() {
@@ -29,21 +29,20 @@ class AchievementsBox extends React.Component {
   getAchievements = (language) => {
     const { achievements } = this.props;
     this.setState({
-      achievements: achievements[language] || []
+      currentLanguageAchievements: achievements[language] || {}
     });
   }
 
   render() {
-    const { achievements } = this.state;
-
+    const { currentLanguageAchievements } = this.state;
+    const keys = Object.keys(currentLanguageAchievements); // ['basic', 'advanced']
     return (
       <div className='achievement-box'>
-        { achievements.map((item) => (
-          <Achievement
-            key={item.title}
-            title={item.title}
-            description={item.description}
-            mark={item.mark}
+        { keys.map((item) => (
+          <AchievementType
+            key={item}
+            typeAchievements={currentLanguageAchievements[item]}
+            type={item}
           />
         ))}
       </div>
