@@ -70,6 +70,6 @@ HeaderBox.propTypes = {
 
 export default connect(
   (state) => ({
-    isAuthorized: state.isAuthorized
+    isAuthorized: state.authorization.isAuthorized
   })
 )(HeaderBox);
