@@ -3,7 +3,7 @@ const initialState = {
 };
 
 export default function authorization(state = initialState, action) {
-  if (action.type === 'SET_IS_AUTHORIZED') {
+  if (action.type === 'AUTHORIZATION/SET') {
     return {
       ...state,
       isAuthorized: action.payload

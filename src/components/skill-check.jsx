@@ -63,7 +63,7 @@ SkillCheck.propTypes = {
 export default connect(
   null,
   (dispatch) => ({
-    setAchievements: (param) => dispatch({ type: 'SET_ACHIEVEMENTS', payload: param }),
-    setLoading: (param) => dispatch({ type: 'SET_LOADING', payload: param })
+    setAchievements: (param) => dispatch({ type: 'ACHIEVEMENTS/SET', payload: param }),
+    setLoading: (param) => dispatch({ type: 'LOADING/SET', payload: param })
   })
 )(SkillCheck);

@@ -6,7 +6,8 @@ import AchievementType from '../achievement-type/achievement-type';
 
 class AchievementsBox extends React.Component {
   state = {
-    currentLanguageAchievements: {}
+    currentLanguageAchievements: {},
+    currentLanguage: ''
   }
 
   componentDidMount() {
@@ -29,12 +30,13 @@ class AchievementsBox extends React.Component {
   getAchievements = (language) => {
     const { achievements } = this.props;
     this.setState({
-      currentLanguageAchievements: achievements[language] || {}
+      currentLanguageAchievements: achievements[language] || {},
+      currentLanguage: language
     });
   }
 
   render() {
-    const { currentLanguageAchievements } = this.state;
+    const { currentLanguageAchievements, currentLanguage } = this.state;
     const keys = Object.keys(currentLanguageAchievements); // ['basic', 'advanced']
     return (
       <div className='achievement-box'>
@@ -43,6 +45,7 @@ class AchievementsBox extends React.Component {
             key={item}
             typeAchievements={currentLanguageAchievements[item]}
             type={item}
+            language={currentLanguage}
           />
         ))}
       </div>

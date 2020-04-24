@@ -84,6 +84,6 @@ SignUpForm.propTypes = {
 export default connect(
   null,
   (dispatch) => ({
-    setIsAuthourized: (param) => dispatch({ type: 'SET_IS_AUTHORIZED', payload: param })
+    setIsAuthourized: (param) => dispatch({ type: 'AUTHORIZATION/SET', payload: param })
   })
 )(SignUpForm);

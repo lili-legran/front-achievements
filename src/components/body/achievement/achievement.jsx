@@ -17,16 +17,27 @@ class Achievement extends React.Component {
   // };
 
   setIsActive = () => {
-    const { setIsActiveAchievement, isActiveAchievement } = this.props;
-    setIsActiveAchievement(true);
-    // eslint-disable-next-line no-console
-    console.log(123, isActiveAchievement);
+    const {
+      setCompletedAchievement,
+      id,
+      type,
+      language
+    } = this.props;
+
+    setCompletedAchievement({
+      id,
+      language,
+      type
+    });
   }
 
   render() {
-    const { title, description, mark } = this.props;
-    // const { setIsActiveAchievement } = this.props;
-    // const { isActive } = this.state;
+    const {
+      title,
+      description,
+      mark,
+      completed
+    } = this.props;
     return (
       // <div className={`achievement ${isActive ? 'achievement__active' : ''}`}
       // onClick={this.toggleAchievement}>
@@ -40,33 +51,38 @@ class Achievement extends React.Component {
           </div>
         </div>
         <div className='achievement__option'>
-          { mark }
-          <div className='achievement__option_check' onClick={this.setIsActive}>
+          <span>{ mark }</span>
+          {!completed && (
+            <button type='button' className='achievement__option_check' onClick={this.setIsActive}>DONE</button>
+          )}
+          {completed && (
             <img
               src={done}
               className='achievement__option_check-img'
               alt='checkmark'
             />
-          </div>
+          )}
         </div>
       </div>
     );
   }
 }
 
+
 Achievement.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   mark: PropTypes.number.isRequired,
-  setIsActiveAchievement: PropTypes.func.isRequired,
-  isActiveAchievement: PropTypes.bool.isRequired
+  setCompletedAchievement: PropTypes.func.isRequired,
+  completed: PropTypes.bool.isRequired,
+  id: PropTypes.string.isRequired,
+  language: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
 };
 
 export default connect(
-  (state) => ({
-    isActiveAchievement: state.isActiveAchievement
-  }),
+  null,
   (dispatch) => ({
-    setIsActiveAchievement: (param) => dispatch({ type: 'SET_ACTIVE_ACHIEVEMENTS', payload: param })
+    setCompletedAchievement: (param) => dispatch({ type: 'ACHIEVEMENT/COMPLETE_ONE', payload: param })
   })
 )(Achievement);

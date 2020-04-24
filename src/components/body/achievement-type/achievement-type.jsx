@@ -5,7 +5,7 @@ import Achievement from '../achievement/achievement';
 
 class AchievementType extends React.Component {
   render() {
-    const { typeAchievements, type } = this.props;
+    const { typeAchievements, type, language } = this.props;
     return (
       <div className='achievement-type'>
         <h2>{type.toUpperCase()}</h2>
@@ -15,6 +15,10 @@ class AchievementType extends React.Component {
             title={achieve.title}
             description={achieve.description}
             mark={achieve.mark}
+            id={achieve.id}
+            language={language}
+            type={type}
+            completed={achieve.completed}
           />
         ))}
       </div>
@@ -31,7 +35,8 @@ AchievementType.propTypes = {
       mark: PropTypes.number
     })
   ).isRequired,
-  type: PropTypes.string.isRequired
+  type: PropTypes.string.isRequired,
+  language: PropTypes.string.isRequired
 };
 
 export default AchievementType;
