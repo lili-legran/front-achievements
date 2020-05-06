@@ -14,6 +14,7 @@ import HeaderBox from './header/header-box/header-box';
 import AchievementsBox from './body/achievements-box/achievements-box';
 import SignUpForm from './body/sign-up-form/sign-up-form';
 import SignInForm from './body/sign-in-form/sign-in-form';
+import PasswordRecoveryForm from './body/password-recovery-form/password-recovery-form';
 import './skill-check.scss';
 
 class SkillCheck extends React.Component {
@@ -46,6 +47,7 @@ class SkillCheck extends React.Component {
             />
             <Route path='/signup' component={SignUpForm} />
             <Route path='/signin' component={SignInForm} />
+            <Route path='/password-recovery' component={PasswordRecoveryForm} />
             <Route component={ErrorPage} />
           </Switch>
         </div>
