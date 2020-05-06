@@ -1,26 +1,51 @@
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
 import PropTypes from 'prop-types';
+import {
+  Accordion,
+  AccordionItem,
+  AccordionItemHeading,
+  AccordionItemButton,
+  AccordionItemPanel,
+} from 'react-accessible-accordion';
+// import 'react-accessible-accordion/dist/fancy-example.css';
 import Achievement from '../achievement/achievement';
+import Arrow from '../../icons/arrow';
+import './achievement-type.scss';
 
 class AchievementType extends React.Component {
   render() {
     const { typeAchievements, type, language } = this.props;
     return (
       <div className='achievement-type'>
-        <h2>{type.toUpperCase()}</h2>
-        {typeAchievements.map((achieve) => (
-          <Achievement
-            key={achieve.id}
-            title={achieve.title}
-            description={achieve.description}
-            mark={achieve.mark}
-            id={achieve.id}
-            language={language}
-            type={type}
-            completed={achieve.completed}
-          />
-        ))}
+        <Accordion allowZeroExpanded>
+          <AccordionItem>
+            <AccordionItemHeading>
+              <AccordionItemButton>
+                <h2>
+                  {type.toUpperCase()}
+                  <Arrow />
+                </h2>
+              </AccordionItemButton>
+            </AccordionItemHeading>
+            <AccordionItemPanel>
+              <div className='accordion-content'>
+                {typeAchievements.map((achieve) => (
+                  <Achievement
+                    key={achieve.id}
+                    title={achieve.title}
+                    description={achieve.description}
+                    mark={achieve.mark}
+                    id={achieve.id}
+                    language={language}
+                    type={type}
+                    completed={achieve.completed}
+                  />
+                ))}
+              </div>
+            </AccordionItemPanel>
+          </AccordionItem>
+        </Accordion>
       </div>
     );
   }
