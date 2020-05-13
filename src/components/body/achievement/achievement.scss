@@ -7,6 +7,7 @@
   align-items: center;
   box-sizing: border-box;
   width: 100%;
+  user-select: none;
   &__active {
     border: 1px solid red;
   }

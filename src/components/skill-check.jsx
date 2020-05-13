@@ -4,7 +4,7 @@ import {
   Route,
   BrowserRouter,
   Redirect,
-  Switch
+  Switch,
 } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import axios from 'axios';
@@ -18,26 +18,26 @@ import PasswordRecoveryForm from './body/password-recovery-form/password-recover
 import './skill-check.scss';
 
 class SkillCheck extends React.Component {
-  componentDidMount() {
-    const { setAchievements, setLoading } = this.props;
-    setLoading(true);
-    axios.get('https://languages-api.glitch.me/achievements')
-      .then((response) => {
-        setAchievements(response.data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        // eslint-disable-next-line no-console
-        console.log('Error!', err);
-      });
-  }
+  // componentDidMount() {
+  //   const { setAchievements, setLoading } = this.props;
+  //   setLoading(true);
+  //   axios.get('https://languages-api.glitch.me/achievements')
+  //     .then((response) => {
+  //       setAchievements(response.data);
+  //       setLoading(false);
+  //     })
+  //     .catch((err) => {
+  //       // eslint-disable-next-line no-console
+  //       console.log('Error!', err);
+  //     });
+  // }
 
   render() {
     return (
       <BrowserRouter>
         <div className='skill-check'>
           <Route component={HeaderBox} />
-          <Switch>
+          {/* <Switch>
             <Route exact path='/'>
               <Redirect to='/javascript' />
             </Route>
@@ -49,7 +49,7 @@ class SkillCheck extends React.Component {
             <Route path='/signin' component={SignInForm} />
             <Route path='/password-recovery' component={PasswordRecoveryForm} />
             <Route component={ErrorPage} />
-          </Switch>
+          </Switch> */}
         </div>
       </BrowserRouter>
     );

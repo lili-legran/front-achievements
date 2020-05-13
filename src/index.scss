@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
+:root {
+  --main-border-color: #08daf5;
+  --submain-border-color: #a7eaf3;
+  --button-font-family: 'PT Sans', sans-serif;
+  --button-color: #4c4c4c;
+}
 
 body {
   margin: 0;
@@ -13,3 +21,4 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
