@@ -1,52 +1,79 @@
 .sign-up-form {
+  margin: var(--margin-l) auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 40%;
-  margin: 30px auto;
-  padding: 15px;
   &__label {
+    margin-bottom: var(--margin-m);
     display: flex;
-    flex-direction: column;
-    margin-bottom: 15px;
+    flex-direction: row;
   }
-  &__login-label {
-
+  &__logup-label,
+  &__email-label,
+  &__pass-label,
+  &__confirm-pass-label {
+    background-size: var(--form-icon-size) var(--form-icon-size);
+    width: var(--form-icon-size);
+    height: var(--form-icon-size);
+    margin-right: var(--margin-m);
+    background-repeat: no-repeat;
+  }
+  &__logup-label {
+    background-image: url(../../../assets/panda.png);
   }
   &__email-label {
-
+    background-image: url(../../../assets/email.png);
   }
   &__pass-label {
-
+    background-image: url(../../../assets/raw.png);
+  }
+  &__confirm-pass-label {
+    background-image: url(../../../assets/raw-green.png);
   }
   &__input {
+    border: 1px solid var(--submain-color);
+    border-radius: var(--main-border-radius);
+    color: var(--font-color);
+    font-size: var(--font-size-m);
     min-width: 300px;
-    margin-top: 5px;
     padding: 10px;
+    &:focus {
+      border-color: var(--main-color);
+    }
   }
   &__login {
-
+    
   }
   &__email {
 
   }
   &__pass {
-
+    
   }
   &__submit {
-    border: 0;
-    border-radius: 0;
-    background: #e8ea85;
-    padding: 5px;
-    min-width: 130px;
-    height: 44px;
-    margin: 15px;
-    outline: none;
+    font-family: var(--font-family);
+    color: var(--font-color);
+    border: 2px solid var(--subsecondary-color);
+    border-radius: var(--main-border-radius);
+    background-color: var(--secondary-color);
+    margin-top: var(--margin-s);
+    width: var(--button-width-l);
+    height: var(--button-height);
+    padding: var(--padding-s);
+    font-weight: bold;
+    font-size: var(--font-size-m);
     cursor: pointer;
-    box-shadow: 0 0 5px 3px #b5b5b5;
-    &:hover,
-    &:active {
-      box-shadow: 0 0 5px 3px #89a6e2;
+    transition: all 0.3s;
+    &:hover {
+      box-shadow: 0 0 3px 2px var(--subsecondary-color);
     }
   }
+}
+
+.form-title {
+  width: 40%;
+  margin: var(--margin-l) auto var(--margin-l);
+  display: flex;
+  justify-content: center;
 }

@@ -1,10 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
 
 :root {
-  --main-border-color: #08daf5;
-  --submain-border-color: #a7eaf3;
-  --button-font-family: 'PT Sans', sans-serif;
-  --button-color: #4c4c4c;
+  --main-color: #08daf5;
+  --submain-color: #a7eaf3;
+  --secondary-color: #ffea73;
+  --subsecondary-color:#ffe240;
+  --font-family: 'PT Sans', sans-serif;
+  --font-color: #4c4c4c;
+  --grey-border: 1px solid #d2d2d2;
+  --padding-l: 25px;
+  --padding-m: 15px;
+  --padding-s: 5px;
+  --margin-l: 25px;
+  --margin-m: 15px;
+  --margin-s: 5px;
+  --width-l: 100%;
+  --main-border-radius: 15px;
+  --button-height: 44px;
+  --button-width-l: 150px;
+  --button-width-m: 100px;
+  --form-icon-size: 50px;
+  --font-size-l: 18px;
+  --font-size-m: 16px;
+  --font-size-s: 14px;
+}
+
+*{
+  outline: none;
+  user-select: none;
 }
 
 body {

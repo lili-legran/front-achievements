@@ -46,19 +46,21 @@ class SignInForm extends React.Component {
     const { username, password } = this.state;
     return (
       <form>
+        <h2 className='form-title'>Welcome!</h2>
         <div className='sign-in-form'>
-          <label className='sign-in-form__label sign-in-form__login-label' htmlFor='sign-in-login'>
-            Login
+          <label className='sign-in-form__label' htmlFor='sign-in-login'>
+            <div className='sign-in-form__login-label' />
             <input
               type='text'
               onChange={this.setusername}
               className='sign-in-form__input sign-in-form__login'
               id='sign-in-login'
               value={username}
+              placeholder='Login'
             />
           </label>
-          <label className='sign-in-form__label sign-in-form__pass-label' htmlFor='sign-in-pass'>
-            Password
+          <label className='sign-in-form__label' htmlFor='sign-in-pass'>
+            <div className=' sign-in-form__pass-label' />
             <input
               type='password'
               onChange={this.setPassword}
@@ -66,6 +68,7 @@ class SignInForm extends React.Component {
               id='sign-in-pass'
               autoComplete='on'
               value={password}
+              placeholder='Password'
             />
           </label>
           <div className='sign-in-form__recovery-pass'>

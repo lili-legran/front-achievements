@@ -6,16 +6,6 @@ import './achievement.scss';
 import done from '../../../assets/done.png';
 
 class Achievement extends React.Component {
-  // state = {
-  //   isActive: false
-  // }
-
-  // toggleAchievement = () => {
-  //   this.setState((prevState) => ({
-  //     isActive: !prevState.isActive
-  //   }));
-  // };
-
   setIsActive = () => {
     const {
       setCompletedAchievement,
@@ -39,8 +29,6 @@ class Achievement extends React.Component {
       completed
     } = this.props;
     return (
-      // <div className={`achievement ${isActive ? 'achievement__active' : ''}`}
-      // onClick={this.toggleAchievement}>
       <div className='achievement'>
         <div className='achievement__designation'>
           <div className='achievement__title'>
@@ -51,17 +39,19 @@ class Achievement extends React.Component {
           </div>
         </div>
         <div className='achievement__option'>
-          <span>{ mark }</span>
-          {!completed && (
-            <button type='button' className='achievement__option_check' onClick={this.setIsActive}>DONE</button>
-          )}
-          {completed && (
-            <img
-              src={done}
-              className='achievement__option_check-img'
-              alt='checkmark'
-            />
-          )}
+          <div className='achievement__option_mark'>{ mark }</div>
+          <div>
+            {!completed && (
+              <button type='button' className='achievement__option_check' onClick={this.setIsActive}>DONE</button>
+            )}
+            {completed && (
+              <img
+                src={done}
+                className='achievement__option_check-img'
+                alt='checkmark'
+              />
+            )}
+          </div>
         </div>
       </div>
     );

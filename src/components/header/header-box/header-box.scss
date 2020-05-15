@@ -1,9 +1,9 @@
 .header-box {
-  width: 100%;
+  width: var(--width-l);
+  border-bottom: var(--grey-border);
   display: flex;
   justify-content: space-between;
   padding-bottom: 40px;
-  border-bottom: 1px solid rgb(206, 206, 206);
   &__skills,
   &__sign {
     display: flex;

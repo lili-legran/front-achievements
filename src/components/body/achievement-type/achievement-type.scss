@@ -1,8 +1,12 @@
 h2 {
+  background: var(--submain-color);
+  margin: var(--margin-l) 0;
+  color: var(--font-color);
+  border-radius: var(--main-border-radius);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #dedeef;
+  padding: 10px 20px;
 }
 
 .accordion-content {
