@@ -40,7 +40,7 @@ class Achievement extends React.Component {
         </div>
         <div className='achievement__option'>
           <div className='achievement__option_mark'>{ mark }</div>
-          <div>
+          <div className='achievement__option_box'>
             {!completed && (
               <button type='button' className='achievement__option_check' onClick={this.setIsActive}>DONE</button>
             )}

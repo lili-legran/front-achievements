@@ -1,4 +1,11 @@
 .achievement-box {
-  width: 70%;
+  width: 1024px;
   margin: 30px auto;
+}
+
+@media (max-width: 1280px) {
+  .achievement-box {
+    width: var(--width-l);
+    margin: 30px auto;
+  }
 }

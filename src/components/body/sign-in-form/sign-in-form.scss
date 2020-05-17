@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 40%;
+  width: var(--form-width-m);
   &__label {
     margin-bottom: var(--margin-m);
     display: flex;
@@ -28,24 +28,25 @@
     border-radius: var(--main-border-radius);
     color: var(--font-color);
     font-size: var(--font-size-m);
-    min-width: 300px;
+    // min-width: 300px;
+    width: var(--form-width-s);
     padding: 10px;
     &:focus {
       border-color: var(--main-color);
     }
   }
-  &__login {
+  // &__login {
 
-  }
-  &__email {
+  // }
+  // &__email {
 
-  }
-  &__pass {
+  // }
+  // &__pass {
 
-  }
+  // }
   &__recovery-pass {
     margin-bottom: var(--margin-m);
-    min-width: 400px;
+    // min-width: 400px;
     text-align: right;
   }
   &__recovery-pass-link {
@@ -65,7 +66,7 @@
     margin-top: var(--margin-s);
     width: var(--button-width-l);
     height: var(--button-height);
-    padding: var(--padding-s);
+    padding: var(--padding-xs);
     font-weight: bold;
     font-size: var(--font-size-m);
     cursor: pointer;
@@ -77,8 +78,24 @@
 }
 
 .form-title {
-  width: 40%;
+  background: var(--submain-color);
+  border-radius: var(--main-border-radius);
+  padding: var(--padding-s) var(--padding-l);
+  color: var(--font-color);
+  width: var(--form-width-m);
   margin: var(--margin-l) auto var(--margin-l);
   display: flex;
   justify-content: center;
+}
+
+@media (max-width: 737px) {
+  .sign-in-form,
+  .form-title {
+    width: var(--form-width-xs);
+  }
+  .sign-in-form {
+    &__input {
+      width: var(--form-width-xs);
+    }
+  }
 }

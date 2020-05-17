@@ -22,10 +22,10 @@ class AchievementType extends React.Component {
           <AccordionItem>
             <AccordionItemHeading>
               <AccordionItemButton>
-                <h2>
+                <div className='achievement-type__title'>
                   {type.toUpperCase()}
                   <Arrow />
-                </h2>
+                </div>
               </AccordionItemButton>
             </AccordionItemHeading>
             <AccordionItemPanel>
