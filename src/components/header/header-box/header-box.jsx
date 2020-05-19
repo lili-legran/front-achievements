@@ -30,6 +30,7 @@ const HeaderBox = (props) => {
   const currentLocation = location.pathname.split('/')[1].toLowerCase();
 
   const isLanguagePage = currentLocation === 'css' || currentLocation === 'html' || currentLocation === 'javascript';
+
   return (
     <div className='header-box'>
       <div className='header-box__skills'>
@@ -48,12 +49,14 @@ const HeaderBox = (props) => {
             <div className='header-box__sign'>
               <span>Nickname</span>
               <LogOutButton />
+              {/* <div className='header-box__sign_icon' /> */}
             </div>
           )
           : (
             <div className='header-box__sign'>
               <SignInButton />
               <SignUpButton />
+              {/* <div className='header-box__sign_icon' /> */}
             </div>
           )
         }

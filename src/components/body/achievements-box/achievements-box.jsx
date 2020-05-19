@@ -58,9 +58,9 @@ AchievementsBox.propTypes = {
     pathname: PropTypes.string
   }).isRequired,
   achievements: PropTypes.shape({
-    html: PropTypes.array,
-    css: PropTypes.array,
-    javascript: PropTypes.array
+    html: PropTypes.shape({}),
+    css: PropTypes.shape({}),
+    javascript: PropTypes.shape({})
   }).isRequired
 };
 

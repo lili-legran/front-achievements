@@ -41,7 +41,7 @@
     border: 2px solid var(--main-color);
     border-radius: var(--main-border-radius);
     min-width: var(--button-width-m);
-    height: var(--button-height);
+    height: var(--button-height-l);
     font-weight: bold;
     font-size: var(--font-size-s);
     background: transparent;
@@ -52,11 +52,11 @@
   }
   }
   &__option_box {
-    height: var(--button-height);
+    height: var(--button-height-l);
   }
   &__option_check-img {
     margin: 0px var(--margin-m);
-    height: var(--button-height);
+    height: var(--button-height-l);
   }
 }
 

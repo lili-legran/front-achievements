@@ -8,6 +8,9 @@
   --font-family: 'PT Sans', sans-serif;
   --font-color: #4c4c4c;
   --grey-border: 1px solid #d2d2d2;
+  --main-border-radius: 15px;
+  --width-l: 95%;
+  --padding-xl: 40px;
   --padding-l: 30px;
   --padding-m: 20px;
   --padding-s: 10px;
@@ -15,20 +18,28 @@
   --margin-l: 25px;
   --margin-m: 15px;
   --margin-s: 5px;
-  --width-l: 95%;
   --form-width-l: 700px;
   --form-width-m: 500px;
   --form-width-s: 400px;
   --form-width-xs: 300px;
-  --main-border-radius: 15px;
-  --button-height: 45px;
-  --button-width-l: 150px;
+  --button-width-xl: 150px;
+  --button-width-l: 130px;
   --button-width-m: 100px;
-  --form-icon-size: 50px;
+  --button-width-s: 80px;
+  --button-width-xs: 60px;
+  --button-width-xxs: 40px;
+  --button-height-l: 45px;
+  --button-height-m: 35px;
   --font-size-xl: 24px;
   --font-size-l: 18px;
   --font-size-m: 16px;
   --font-size-s: 14px;
+  --icon-width-l: 50px;
+  --icon-width-m: 30px;
+  --icon-width-s: 20px;
+  --icon-height-l: 50px;
+  --icon-height-m: 30px;
+  --icon-height-s: 20px;
 }
 
 *{
@@ -51,3 +62,7 @@ code {
     monospace;
 }
 
+form {
+  width: var(--width-l);
+  margin: 0 auto;
+}

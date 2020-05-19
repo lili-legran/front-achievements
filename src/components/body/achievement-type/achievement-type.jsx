@@ -39,7 +39,7 @@ class AchievementType extends React.Component {
                     id={achieve.id}
                     language={language}
                     type={type}
-                    completed={achieve.completed}
+                    completed={achieve.completed || false}
                   />
                 ))}
               </div>

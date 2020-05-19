@@ -28,6 +28,7 @@ class Achievement extends React.Component {
       mark,
       completed
     } = this.props;
+
     return (
       <div className='achievement'>
         <div className='achievement__designation'>

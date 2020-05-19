@@ -9,14 +9,34 @@
     border: 2px solid var(--main-color);
     border-radius: var(--main-border-radius);
     background: transparent;
-    min-width: var(--button-width-m);
-    height: var(--button-height);
+    width: var(--button-width-m);
+    height: var(--button-height-l);
     padding: var(--padding-xs);
     outline: none;
     cursor: pointer;
     transition: all 0.3s;
     &:hover {
       box-shadow: 0 0 3px 2px var(--submain-color);
+    }
+  }
+}
+
+@media (max-width: 1280px) {
+  .sign-in-header {
+    &__button {
+      width: var(--button-width-s);
+    }
+  }
+}
+
+@media (max-width: 737px) {
+  .sign-in-header {
+    margin-right: var(--margin-s);
+    &__button {
+      width: var(--button-width-xs);
+      padding: 0;
+      height: var(--button-height-m);
+      font-size: var(--font-size-s);
     }
   }
 }

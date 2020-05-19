@@ -6,7 +6,7 @@ class PasswordRecoveryForm extends React.Component {
   render() {
     return (
       <form>
-        <h2 className='form-title'>Create your best password!</h2>
+        <h2 className='pass-recovery-form__title'>Create your best password!</h2>
         <div className='pass-recovery-form'>
           <label className='pass-recovery-form__label' htmlFor='pass-recovery'>
             <div className='pass-recovery-form__pass-label' />

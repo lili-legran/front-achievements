@@ -4,10 +4,19 @@
   border-bottom: var(--grey-border);
   display: flex;
   justify-content: space-between;
-  padding-bottom: 40px;
+  padding-bottom: var(--padding-xl);
   &__skills,
   &__sign {
     display: flex;
     align-items: center;
+  }
+  &__sign_icon {
+    display: none;
+  }
+}
+
+@media (max-width: 737px) {
+  .header-box {
+    padding-bottom: var(--padding-m);
   }
 }
